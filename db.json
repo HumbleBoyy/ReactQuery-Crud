@@ -1,0 +1,22 @@
+{
+    "courses":[
+        {
+            "id":1,
+            "name":"Web Practicum",
+            "price":100000,
+            "duration":8,
+            "studyTime":4,
+            "location":"California",
+            "teacher":"John Johnes"
+        },
+        {
+            "id":2,
+            "name":"Web Practicum Pro",
+            "price":150000,
+            "duration":10,
+            "studyTime":6,
+            "location":"New York",
+            "teacher":"Patrick Jhones"
+        }
+    ]
+}
