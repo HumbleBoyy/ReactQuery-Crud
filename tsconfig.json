@@ -2,6 +2,7 @@
   "extends": "@gravity-ui/tsconfig/tsconfig",
   "compilerOptions": {
     "target": "es5",
+    "baseUrl": "./",
     "lib": ["dom", "dom.iterable", "esnext"],
     "types": ["vite-plugin-svgr/client"],
     "allowJs": true,
@@ -17,8 +18,8 @@
     "incremental": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@/*": ["./src/*"]
-  }
+      "@/*": ["src/*"]
+     }
   },
   "include": ["**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
