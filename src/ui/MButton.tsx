@@ -1,9 +1,9 @@
 import { ButtonType } from '@/types/ButtonType';
 import {Button} from '@gravity-ui/uikit';
 import { FC } from 'react';
-const MButton:FC<ButtonType> = ({children, size, title, extraClass, view}) => {
+const MButton:FC<ButtonType> = ({children, size, title, type, extraClass, view, onClick}) => {
   return (
-    <Button className={`${extraClass}`} view={view} size={size}>{children}</Button>
+    <Button type={type} onClick={onClick} className={`${extraClass}`} view={view} size={size}>{children}</Button>
   )
 }
 

@@ -1,10 +1,11 @@
 import MButton from '../ui/MButton';
+import { HeaderStyle } from './style';
 const Header = () => {
   return (
-    <div>
-      <h1>StudyPro</h1>
-      <MButton>Hello</MButton>
-    </div>
+    <HeaderStyle>
+      <h1 className='header_title'>StudyPro</h1>
+      <MButton type='button' size={"xl"} view={"outlined-action"} onClick={(e:Event) => console.log(e.target)}>Hello</MButton>
+    </HeaderStyle>
   )
 }
 
