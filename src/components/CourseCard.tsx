@@ -12,7 +12,7 @@ const CourseCard:FC<{item:CourseType}> = ({item}) => {
          <h3 className='card_div_h3'>Davomiyligi: <span>{item.duration}</span> Oy</h3>
          <h3 className='card_div_h3'>Kuniga: <span>{item.studyTime}</span> Soat</h3>
          <h3 className='card_div_h3'>Manzil: <span>{item.location}</span></h3>
-         <MButton size={"xl"} view={"action"} extraClass='card_div_btn'>{item.price} So'm</MButton>
+         <MButton type='button' size={"xl"} view={"action"} extraClass='card_div_btn'>{item.price} So'm</MButton>
        </div>
     </CourseCardi>
   )
