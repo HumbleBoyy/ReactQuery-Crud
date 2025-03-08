@@ -1,12 +1,15 @@
+import { CourseType } from "@/types/CourseType";
+import CourseCard from "../components/CourseCard";
+import { HomeStyle } from "../Modules/style";
 import { getRequest } from "../service/getRequest"
-
+import {Loader} from '@gravity-ui/uikit';
 const Home = () => {
-  const {data:coursesList, isLoading}   = getRequest("courses", "/courses")
+  const {data:coursesList = [], isLoading}   = getRequest("courses", "/courses")
   console.log(coursesList)
   return (
-    <div>
-      Home
-    </div>
+    <HomeStyle>
+      {isLoading ? <Loader/> : coursesList.map((item:CourseType)=> <CourseCard item={item} key={item.id}/>)}
+    </HomeStyle>
   )
 }
 
