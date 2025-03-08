@@ -58,3 +58,11 @@ export const CourseCardi = styled.div`
         font-weight: 600;
     }
 `
+
+export const AddFormWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 400px;
+  padding: 20px;
+`

@@ -6,5 +6,6 @@ export interface InputType {
     size:"s" | "m" | "l" | "xl"
     type?:"number" | "text" | "password" | "email"
     name?:string,
-    onChange?:React.ChangeEventHandler<HTMLInputElement>
+    onChange?:React.ChangeEventHandler<HTMLInputElement>,
+    value?:string
 }
