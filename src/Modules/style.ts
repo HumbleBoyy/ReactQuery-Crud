@@ -4,6 +4,7 @@ export const HeaderStyle = styled.header`
    align-items: center;
    justify-content: space-between;
    padding: 20px;
+   border-bottom: 2px solid white;
 
    .header_title{
        color: gold;
@@ -18,6 +19,7 @@ export const HomeStyle = styled.div`
   height: 100vh;
   overflow: hidden;
   gap: 10px;
+  margin-top: 20px;
 `
 export const CourseCardi = styled.div`
     display: flex;

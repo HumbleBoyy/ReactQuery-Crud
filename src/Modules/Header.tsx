@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <HeaderStyle>
       <h1 className='header_title'>StudyPro</h1>
-      <MButton type='button' size={"xl"} view={"outlined-action"} onClick={(e:Event) => console.log(e.target)}>Hello</MButton>
+      <MButton type='button' size={"xl"} view={"outlined-action"} onClick={(e:Event) => console.log(e.target)}>Add</MButton>
     </HeaderStyle>
   )
 }
