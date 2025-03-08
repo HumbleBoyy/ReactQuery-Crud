@@ -6,6 +6,8 @@ import './styles/globals.scss';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
 import {QueryClientProvider, QueryClient} from "@tanstack/react-query"
+import { GlobalContext } from './context/context';
+import { ThemeProvider } from "@gravity-ui/uikit";
 
 const queryClient = new QueryClient({
       defaultOptions:{
@@ -22,8 +24,12 @@ const queryClient = new QueryClient({
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
     <BrowserRouter>
-       <QueryClientProvider client={queryClient}>
-         <App/>
-       </QueryClientProvider>
+    <ThemeProvider>
+       <GlobalContext>
+         <QueryClientProvider client={queryClient}>
+            <App/>
+         </QueryClientProvider>
+       </GlobalContext>
+      </ThemeProvider>
     </BrowserRouter>
 );

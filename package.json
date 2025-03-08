@@ -36,7 +36,7 @@
   "dependencies": {
     "@gravity-ui/icons": "^2.13.0",
     "@gravity-ui/navigation": "^3.1.1",
-    "@gravity-ui/uikit": "^7.4.0",
+    "@gravity-ui/uikit": "^7.5.1",
     "@tanstack/react-query": "^5.67.2",
     "axios": "^1.8.2",
     "bem-cn-lite": "^4.1.0",

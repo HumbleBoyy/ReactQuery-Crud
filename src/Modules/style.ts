@@ -1,4 +1,13 @@
 import {styled} from "styled-components"
+
+export const AppClass = styled.div`
+  ::-webkit-scrollbar{
+    display: none;
+    width: 0px;
+  }
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+`
 export const HeaderStyle = styled.header`
    display:flex;
    align-items: center;
