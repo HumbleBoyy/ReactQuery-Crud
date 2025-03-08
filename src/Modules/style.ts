@@ -43,4 +43,9 @@ export const CourseCardi = styled.div`
     .card_div_h3{
         font-size: 20px;
     }
+    .card_div_btn{
+        font-size: 20px;
+        color: white;
+        font-weight: 600;
+    }
 `
