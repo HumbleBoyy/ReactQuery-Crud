@@ -1,7 +1,6 @@
 import { ReactNode } from "react";
 
 export interface ButtonType {
-    title?:string,
     size:"xs" | "s" | "m" | "l" | "xl",
     children:ReactNode,
     extraClass?:string,
