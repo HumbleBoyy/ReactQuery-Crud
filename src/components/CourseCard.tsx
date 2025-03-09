@@ -1,9 +1,9 @@
 import { CourseCardi } from '../Modules/style'
-import { CourseType } from '@/types/CourseType'
+import { CourseCreateType } from '../types/CourseType'
 import MButton from '../ui/MButton'
 import _React, { FC } from 'react'
 
-const CourseCard:FC<{item:CourseType}> = ({item}) => {
+const CourseCard:FC<{item:CourseCreateType}> = ({item}) => {
   return (
     <CourseCardi>
        <h2 className='card_title'>{item.name}</h2>
