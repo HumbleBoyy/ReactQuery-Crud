@@ -8,7 +8,7 @@ import { FormEvent, useContext, useState } from "react";
 import { Context } from "../context/context";
 import InputUi from "../ui/InputUi";
 import MButton from "../ui/MButton";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { instance } from "../hooks/instance";
 const Home = () => {
   const {data:coursesList = [], isLoading}   = getRequest("courses", "/courses")
@@ -20,11 +20,13 @@ const Home = () => {
   const [studyTime, setStudyTime] = useState<string>("")
   const [location, setLocation] = useState<string>("")
   const [teacher, setTeacher] = useState<string>("")
+  const queryClient = useQueryClient()
 
   const createCourseMutation = useMutation({
      mutationFn:(data:CourseCreateType)=> instance().post("/courses", data),
      onSuccess:() => {
        setAddModal(false)
+       queryClient.invalidateQueries({queryKey:['courses']})
      }
   }) 
 

@@ -26,6 +26,15 @@
       "studyTime": "3",
       "location": "Ohio",
       "teacher": "Tom Jerry"
+    },
+    {
+      "id": "f2ea",
+      "name": "Game Developing",
+      "price": "300000",
+      "duration": "12",
+      "studyTime": "5",
+      "location": "England",
+      "teacher": "Kane Jane"
     }
   ]
 }
