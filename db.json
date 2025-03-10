@@ -1,15 +1,6 @@
 {
   "courses": [
     {
-      "name": "Web Practicum Plus",
-      "price": "100000212",
-      "duration": "81",
-      "studyTime": 4,
-      "location": "California",
-      "teacher": "John Johnesqwdws",
-      "id": "1"
-    },
-    {
       "id": "2",
       "name": "Web Practicum Pro",
       "price": 150000,
@@ -19,13 +10,13 @@
       "teacher": "Patrick Jhones"
     },
     {
-      "id": "dbc9",
       "name": "Backend Java",
       "price": "200000",
-      "duration": "10",
+      "duration": "9",
       "studyTime": "3",
       "location": "Ohio",
-      "teacher": "Tom Jerry"
+      "teacher": "Tom Jerry",
+      "id": "dbc9"
     },
     {
       "id": "f2ea",
@@ -47,7 +38,7 @@
     },
     {
       "name": "SMM Practicum",
-      "price": "50000",
+      "price": "70000",
       "duration": "8",
       "studyTime": "42",
       "location": "Austria",

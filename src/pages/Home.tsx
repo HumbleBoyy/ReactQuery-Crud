@@ -1,4 +1,4 @@
-import { CourseCreateType, CourseItemType } from "@/types/CourseType";
+import { CourseCreateType } from "@/types/CourseType";
 import CourseCard from "../components/CourseCard";
 import { AddFormWrapper, HomeStyle } from "../Modules/style";
 import { getRequest } from "../service/getRequest"
@@ -10,15 +10,16 @@ import InputUi from "../ui/InputUi";
 import MButton from "../ui/MButton";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { instance } from "../hooks/instance";
+import toast, { Toaster } from 'react-hot-toast';
 const Home = () => {
   const {data:coursesList = [], isLoading}   = getRequest("courses", "/courses")
   const {addModal, setAddModal, isEdit, setIsEdit, name, setName, price, setPrice, duration, setDuration, studyTime, setStudyTime, location, setLocation, teacher, setTeacher} = useContext(Context)
   const [editId, setEditId] = useState<string | undefined>("")
   const queryClient = useQueryClient()
-
   const createCourseMutation = useMutation({
      mutationFn:(data:CourseCreateType)=> instance().post("/courses", data),
      onSuccess:() => {
+      toast.success("Success")
        setAddModal(false)
        queryClient.invalidateQueries({queryKey:['courses']})
      }
@@ -26,6 +27,7 @@ const Home = () => {
   const updateCourseMutation = useMutation({
     mutationFn:(data:CourseCreateType) => instance().put(`/courses/${data.id}`, data),
     onSuccess:()=> {
+      toast.success("Success")
        setAddModal(false)
        queryClient.invalidateQueries({queryKey:['courses']})
        setName("")
@@ -39,6 +41,7 @@ const Home = () => {
   const deleteMutation = useMutation({
     mutationFn:(id:string | undefined)=> instance().delete(`/courses/${id}`),
     onSuccess:()=> {
+      toast.success("Success")
       queryClient.invalidateQueries({queryKey:['courses']})
     }
   })
@@ -79,6 +82,10 @@ const Home = () => {
   }
   return (
     <>
+    <Toaster
+      position="top-center"
+      reverseOrder={false}
+    />
       <HomeStyle>
         {isLoading ? <Loader/> : coursesList.map((item:CourseCreateType)=> <CourseCard handleDelete={deleteCourse} handleEdit={editBtnClick} item={item} key={item.id}/>)}
       </HomeStyle>
