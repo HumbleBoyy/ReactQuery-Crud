@@ -36,7 +36,12 @@ const Home = () => {
        setTeacher("")
     }
   })
-
+  const deleteMutation = useMutation({
+    mutationFn:(id:string | undefined)=> instance().delete(`/courses/${id}`),
+    onSuccess:()=> {
+      queryClient.invalidateQueries({queryKey:['courses']})
+    }
+  })
   const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
      e.preventDefault()
      const data:CourseCreateType = {
@@ -68,10 +73,14 @@ const Home = () => {
     setLocation(obj.location)
     setTeacher(obj.teacher)
   }
+
+  const deleteCourse = (id:string | undefined) => {
+     deleteMutation.mutate(id)
+  }
   return (
     <>
       <HomeStyle>
-        {isLoading ? <Loader/> : coursesList.map((item:CourseCreateType)=> <CourseCard handleEdit={editBtnClick} item={item} key={item.id}/>)}
+        {isLoading ? <Loader/> : coursesList.map((item:CourseCreateType)=> <CourseCard handleDelete={deleteCourse} handleEdit={editBtnClick} item={item} key={item.id}/>)}
       </HomeStyle>
       <ModalUi open={addModal} setOpen={setAddModal}>
          <AddFormWrapper onSubmit={handleSubmit}>

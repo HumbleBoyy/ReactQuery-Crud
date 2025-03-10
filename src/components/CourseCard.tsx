@@ -6,7 +6,7 @@ import _React, { FC } from 'react'
 import { MdDelete } from "react-icons/md";
 import { CourseCardi } from './style';
 
-const CourseCard:FC<{item:CourseCreateType, handleEdit:(obj:CourseItemType) => void}> = ({item, handleEdit}) => {
+const CourseCard:FC<{item:CourseCreateType, handleEdit:(obj:CourseCreateType) => void, handleDelete:(id:string | undefined) => void} > = ({item, handleEdit, handleDelete}) => {
   return (
     <CourseCardi>
        <h2 className='card_title'>{item.name}</h2>
@@ -18,7 +18,7 @@ const CourseCard:FC<{item:CourseCreateType, handleEdit:(obj:CourseItemType) => v
          <h3 className='card_div_h3'>Kurs Narxi: <MButton type='button' size={"xl"} view={"raised"} extraClass='card_div_btn'>{item.price} So'm</MButton></h3>
          <div className='cousrse_card_btn'>
             <MButton onClick={()=> handleEdit(item)} type={"button"} size={"xl"} extraClass={"btn_class"} view={"outlined"}><CiEdit /><span>Edit</span></MButton>
-            <MButton type={"button"} size={"xl"} extraClass={"btn_class"} view={"outlined-danger"}><MdDelete/>Delete</MButton>
+            <MButton onClick={()=> handleDelete(item.id)} type={"button"} size={"xl"} extraClass={"btn_class"} view={"outlined-danger"}><MdDelete/>Delete</MButton>
          </div>
        </div>
     </CourseCardi>
