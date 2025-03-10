@@ -35,6 +35,24 @@
       "studyTime": "5",
       "location": "England",
       "teacher": "Kane Jane"
+    },
+    {
+      "id": "8ad4",
+      "name": "Smm",
+      "price": "20000",
+      "duration": "4",
+      "studyTime": "3",
+      "location": "Scotland",
+      "teacher": "Hello"
+    },
+    {
+      "id": "da54",
+      "name": "SMM Practicum",
+      "price": "50000",
+      "duration": "8",
+      "studyTime": "4",
+      "location": "Austria",
+      "teacher": "Waldemort"
     }
   ]
 }

@@ -23,41 +23,23 @@ export const HeaderStyle = styled.header`
 `
 export const HomeStyle = styled.div`
   display: flex;
-  justify-content: center;
-  flex: wrap;
+  justify-content: start;
+  padding: 10px;
+  flex-wrap: wrap;
   height: 100vh;
   overflow: hidden;
   gap: 10px;
   margin-top: 20px;
-`
-export const CourseCardi = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 325px;
-    width: 400px;
-    border: 2px solid gold;
-    border-radius: 20px;
 
-    .card_title{
-        text-align: center;
-        border-bottom: 2px solid gold;
-        font-size: 30px;
-        line-height: 20px;
-        font-weight: 800;
-        padding-bottom: 10px;
-    }
-    .card_div{
-        padding: 5px;
-    }
-    .card_div_h3{
-        font-size: 20px;
-    }
-    .card_div_btn{
-        font-size: 20px;
-        color: white;
-        font-weight: 600;
-    }
+
+  .cousrse_card_btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
 `
+
 
 export const AddFormWrapper = styled.form`
   display: flex;

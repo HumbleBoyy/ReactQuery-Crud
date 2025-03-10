@@ -1,7 +1,10 @@
-import { CourseCardi } from '../Modules/style'
+
 import { CourseCreateType } from '../types/CourseType'
+import { CiEdit } from "react-icons/ci";
 import MButton from '../ui/MButton'
 import _React, { FC } from 'react'
+import { MdDelete } from "react-icons/md";
+import { CourseCardi } from './style';
 
 const CourseCard:FC<{item:CourseCreateType}> = ({item}) => {
   return (
@@ -12,7 +15,11 @@ const CourseCard:FC<{item:CourseCreateType}> = ({item}) => {
          <h3 className='card_div_h3'>Davomiyligi: <span>{item.duration}</span> Oy</h3>
          <h3 className='card_div_h3'>Kuniga: <span>{item.studyTime}</span> Soat</h3>
          <h3 className='card_div_h3'>Manzil: <span>{item.location}</span></h3>
-         <MButton type='button' size={"xl"} view={"action"} extraClass='card_div_btn'>{item.price} So'm</MButton>
+         <h3 className='card_div_h3'>Kurs Narxi: <MButton type='button' size={"xl"} view={"raised"} extraClass='card_div_btn'>{item.price} So'm</MButton></h3>
+         <div className='cousrse_card_btn'>
+            <MButton type={"button"} size={"xl"} extraClass={"btn_class"} view={"outlined"}><CiEdit /><span>Edit</span></MButton>
+            <MButton type={"button"} size={"xl"} extraClass={"btn_class"} view={"outlined-danger"}><MdDelete/>Delete</MButton>
+         </div>
        </div>
     </CourseCardi>
   )
