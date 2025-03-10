@@ -19,13 +19,13 @@
       "id": "dbc9"
     },
     {
-      "id": "f2ea",
       "name": "Game Developing",
       "price": "300000",
       "duration": "12",
       "studyTime": "5",
       "location": "England",
-      "teacher": "Kane Jane"
+      "teacher": "Kane Holland",
+      "id": "f2ea"
     },
     {
       "id": "8ad4",
@@ -44,6 +44,15 @@
       "location": "Austria",
       "teacher": "Waldemort",
       "id": "da54"
+    },
+    {
+      "id": "d044",
+      "name": "Ai Course",
+      "price": "100000",
+      "duration": "6",
+      "studyTime": "3",
+      "location": "Anywhere",
+      "teacher": "Chatpgt"
     }
   ]
 }
