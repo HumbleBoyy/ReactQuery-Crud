@@ -23,11 +23,12 @@ export const HeaderStyle = styled.header`
 `
 export const HomeStyle = styled.div`
   display: flex;
-  justify-content: start;
+  justify-content: center;
+  align-items: center;
   padding: 10px;
   flex-wrap: wrap;
-  height: auto;
-  overflow: hidden;
+  height: 100vh;
+  overflow-y: auto;
   gap: 10px;
   margin-top: 20px;
 `
