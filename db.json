@@ -1,13 +1,13 @@
 {
   "courses": [
     {
-      "id": "1",
-      "name": "Web Practicum",
-      "price": 100000,
-      "duration": 8,
+      "name": "Web Practicum Plus",
+      "price": "100000212",
+      "duration": "81",
       "studyTime": 4,
       "location": "California",
-      "teacher": "John Johnes"
+      "teacher": "John Johnesqwdws",
+      "id": "1"
     },
     {
       "id": "2",
@@ -46,13 +46,22 @@
       "teacher": "Hello"
     },
     {
-      "id": "da54",
       "name": "SMM Practicum",
       "price": "50000",
       "duration": "8",
-      "studyTime": "4",
+      "studyTime": "42",
       "location": "Austria",
-      "teacher": "Waldemort"
+      "teacher": "Waldemort",
+      "id": "da54"
+    },
+    {
+      "id": "a9a3",
+      "name": "Hello Pro",
+      "price": "2222111",
+      "duration": "5",
+      "studyTime": "3",
+      "location": "Poland",
+      "teacher": "Kimmy Tom"
     }
   ]
 }

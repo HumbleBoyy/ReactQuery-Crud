@@ -1,13 +1,13 @@
 
-export interface CourseCreateType {
+export interface CourseItemType {
     name:string,
-    price:number | string,
-    duration:number | string,
-    studyTime:number | string,
+    price:string,
+    duration:string,
+    studyTime:string,
     location:string,
     teacher:string
 }
 
-export interface CourseItemType extends CourseCreateType {
-    id:number
+export interface CourseCreateType extends  CourseItemType{
+    id?:string
 }

@@ -12,14 +12,8 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { instance } from "../hooks/instance";
 const Home = () => {
   const {data:coursesList = [], isLoading}   = getRequest("courses", "/courses")
-  const {addModal, setAddModal} = useContext(Context)
-
-  const [name, setName] = useState<string>("")
-  const [price, setPrice] = useState<string>("")
-  const [duration, setDuration] = useState<string>("")
-  const [studyTime, setStudyTime] = useState<string>("")
-  const [location, setLocation] = useState<string>("")
-  const [teacher, setTeacher] = useState<string>("")
+  const {addModal, setAddModal, isEdit, setIsEdit, name, setName, price, setPrice, duration, setDuration, studyTime, setStudyTime, location, setLocation, teacher, setTeacher} = useContext(Context)
+  const [editId, setEditId] = useState<string | undefined>("")
   const queryClient = useQueryClient()
 
   const createCourseMutation = useMutation({
@@ -29,10 +23,23 @@ const Home = () => {
        queryClient.invalidateQueries({queryKey:['courses']})
      }
   }) 
+  const updateCourseMutation = useMutation({
+    mutationFn:(data:CourseCreateType) => instance().put(`/courses/${data.id}`, data),
+    onSuccess:()=> {
+       setAddModal(false)
+       queryClient.invalidateQueries({queryKey:['courses']})
+       setName("")
+       setPrice("")
+       setDuration("")
+       setStudyTime("")
+       setLocation("")
+       setTeacher("")
+    }
+  })
 
   const handleSubmit = (e:FormEvent<HTMLFormElement>) => {
      e.preventDefault()
-     const data = {
+     const data:CourseCreateType = {
         name,
         price,
         duration,
@@ -40,12 +47,31 @@ const Home = () => {
         location,
         teacher
      }
-     createCourseMutation.mutate(data)
+
+     if(isEdit === "create"){
+      createCourseMutation.mutate(data)
+     }else{
+       data.id = editId
+       updateCourseMutation.mutate(data)
+     }
+     
+  }
+
+  const editBtnClick = (obj:CourseCreateType) => {
+    setIsEdit("update")
+    setEditId(obj.id)
+    setAddModal(true)
+    setName(obj.name)
+    setPrice(obj.price)
+    setDuration(obj.duration)
+    setStudyTime(obj.studyTime)
+    setLocation(obj.location)
+    setTeacher(obj.teacher)
   }
   return (
     <>
       <HomeStyle>
-        {isLoading ? <Loader/> : coursesList.map((item:CourseItemType)=> <CourseCard item={item} key={item.id}/>)}
+        {isLoading ? <Loader/> : coursesList.map((item:CourseCreateType)=> <CourseCard handleEdit={editBtnClick} item={item} key={item.id}/>)}
       </HomeStyle>
       <ModalUi open={addModal} setOpen={setAddModal}>
          <AddFormWrapper onSubmit={handleSubmit}>
@@ -55,7 +81,7 @@ const Home = () => {
             <InputUi value={price} onChange={(e) => setPrice(e.target.value)} name="price" view={"normal"} size={"xl"} placeholder="Price"  type={"text"}/>
             <InputUi value={duration} onChange={(e) => setDuration(e.target.value)} name="duration" view={"normal"} size={"xl"} placeholder="Kurs Davomiyligi"  type={"number"}/>
             <InputUi value={studyTime} onChange={(e) => setStudyTime(e.target.value)} name="studyTime" view={"normal"} size={"xl"} placeholder="Dars Soati"  type={"number"}/>
-            <MButton view={"action"} size={"xl"} type={"submit"} >Add</MButton>
+            <MButton view={"action"} size={"xl"} type={"submit"} >{isEdit === "create" ? "Create" : "Edit"}</MButton>
          </AddFormWrapper>
       </ModalUi>
     </>

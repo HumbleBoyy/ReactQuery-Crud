@@ -32,7 +32,7 @@ export const CourseCardi = styled.div`
     align-items: center;
     gap: 10px;
   }
-    .btn_class{
+.btn_class{
     display: flex;
     align-items: center;
     justify-items: space-between;

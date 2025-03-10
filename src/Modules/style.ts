@@ -26,7 +26,7 @@ export const HomeStyle = styled.div`
   justify-content: start;
   padding: 10px;
   flex-wrap: wrap;
-  height: 100vh;
+  height: auto;
   overflow: hidden;
   gap: 10px;
   margin-top: 20px;
