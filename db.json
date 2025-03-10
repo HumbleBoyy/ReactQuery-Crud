@@ -62,6 +62,15 @@
       "studyTime": "3",
       "location": "Poland",
       "teacher": "Kimmy Tom"
+    },
+    {
+      "id": "7c32",
+      "name": "New Pro",
+      "price": "100000",
+      "duration": "5",
+      "studyTime": "3",
+      "location": "France",
+      "teacher": "Manual Loke"
     }
   ]
 }
