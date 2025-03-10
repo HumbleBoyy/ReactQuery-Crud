@@ -26,6 +26,12 @@ export const CourseCardi = styled.div`
         color: white;
         font-weight: 600;
     }
+
+    .cousrse_card_btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
     .btn_class{
     display: flex;
     align-items: center;
@@ -33,6 +39,5 @@ export const CourseCardi = styled.div`
     text-align: center;
     font-size: 20px;
     width: 100%;
-    /* height: 50px; */
   }
 `

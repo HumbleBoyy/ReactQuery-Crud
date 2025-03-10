@@ -30,14 +30,6 @@ export const HomeStyle = styled.div`
   overflow: hidden;
   gap: 10px;
   margin-top: 20px;
-
-
-  .cousrse_card_btn{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
 `
 
 
