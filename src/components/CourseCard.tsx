@@ -1,5 +1,5 @@
 
-import { CourseCreateType, CourseItemType } from '../types/CourseType'
+import { CourseCreateType } from '../types/CourseType'
 import { CiEdit } from "react-icons/ci";
 import MButton from '../ui/MButton'
 import _React, { FC } from 'react'
